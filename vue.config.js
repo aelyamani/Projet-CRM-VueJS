@@ -5,3 +5,10 @@ module.exports = defineConfig({
     devtool: 'source-map'
   }
 })
+
+// Changement du dossier de compilation
+const path = require("path");
+
+module.exports = {
+  outputDir: path.resolve(__dirname, "./easysoftcrm_vue/")
+}
