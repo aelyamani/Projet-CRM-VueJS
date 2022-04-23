@@ -61,6 +61,7 @@ export default {
       await axios
         .post("/api/v1/token/login/", formData)
         .then((response) => {
+          console.log(response)
           const token = response.data.auth_token;
 
           this.$store.commit("setToken", token);
@@ -70,6 +71,8 @@ export default {
           localStorage.setItem("token", token);
         })
         .catch((error) => {
+          console.log(error)
+
           if (error.response) {
             for (const property in error.response.data) {
               this.errors.push(`${property}: ${error.response.data[property]}`);
