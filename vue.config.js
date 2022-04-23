@@ -6,9 +6,9 @@ module.exports = defineConfig({
   }
 })
 
-// Changement du dossier de compilation
+// Changement du nom du dossier de compilation
 const path = require("path");
 
 module.exports = {
-  outputDir: path.resolve(__dirname, "./easysoftcrm_vue/")
+  outputDir: path.resolve(__dirname, "../easysoftcrm-vue/")
 }
