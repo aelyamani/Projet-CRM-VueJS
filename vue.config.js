@@ -6,7 +6,6 @@ module.exports = defineConfig({
   }
 })
 
-
 // Changement du nom du dossier de compilation
 const path = require("path");
 
