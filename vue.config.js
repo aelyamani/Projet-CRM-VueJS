@@ -10,5 +10,5 @@ module.exports = defineConfig({
 const path = require("path");
 
 module.exports = {
-  outputDir: path.resolve(__dirname, "./easysoftcrm_vue-prod/")
+  outputDir: path.resolve(__dirname, "./prod/")
 }
