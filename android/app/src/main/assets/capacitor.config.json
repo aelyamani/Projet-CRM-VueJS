@@ -1,0 +1,6 @@
+{
+	"appId": "com.easysoftcrm.app",
+	"appName": "easysoftCRM",
+	"webDir": "easysoftcrm_vue",
+	"bundledWebRuntime": false
+}
