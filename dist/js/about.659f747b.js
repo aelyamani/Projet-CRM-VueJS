@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkeasysoftcrm_vue"]=self["webpackChunkeasysoftcrm_vue"]||[]).push([[443],{7381:function(e,n,s){s.r(n),s.d(n,{default:function(){return l}});var u=s(3396);const t={class:"about"},a=(0,u._)("h1",null,"This is an about page",-1),r=[a];function c(e,n){return(0,u.wg)(),(0,u.iD)("div",t,r)}var o=s(89);const f={},i=(0,o.Z)(f,[["render",c]]);var l=i}}]);
-//# sourceMappingURL=about.659f747b.js.map
