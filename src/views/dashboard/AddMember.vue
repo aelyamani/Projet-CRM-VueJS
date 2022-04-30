@@ -71,7 +71,7 @@ export default {
         this.errors.push("Le nom d'utilisateur est manquant");
       }
       if (this.email === "") {
-        this.errors.push("L'email' est manquant");
+        this.errors.push("L'email est manquant");
       }
       if (this.password1 === "") {
         this.errors.push("Le mot de passe est court");
@@ -89,6 +89,7 @@ export default {
         await axios
           .post("/api/v1/users/", formData)
           .then((response) => {
+            console.log("user", response);
             toast({
               message: "Le membre a bien été ajouter",
               type: "is-success",
@@ -112,6 +113,7 @@ export default {
         axios
           .post("/api/v1/teams/add_member/", emailData)
           .then((response) => {
+            console.log("add_member", response);
             toast({
               message: "Le membre a bien été ajouter",
               type: "is-success",

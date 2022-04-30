@@ -2,20 +2,13 @@
   <div class="container">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h1 class="title">{{ team.name }}</h1>
+        <h1 class="title" v-if="team.created_by.id === parseInt($store.state.user.id)">
+          {{ team.name }}
+        </h1>
 
-        <!-- <hr /> -->
-
-        <!-- <p><strong>Plan: </strong>{{ $store.state.team.plan }}</p> -->
-        <!-- <p><strong>Max clients: </strong>{{ $store.state.team.max_clients }}</p> -->
-        <!-- <p><strong>Max leads: </strong>{{ $store.state.team.max_leads }}</p> -->
-        <!-- <p v-if="$store.state.team.plan !== 'Free'"> -->
-        <!-- <strong>Plan end date: </strong>{{ team.plan_end_date }} -->
-        <!-- </p> -->
-        <!-- 
-        <p>
-          <router-link :to="{ name: 'Plans' }">Change plan</router-link>
-        </p> -->
+        <h1 class="title" v-if="team.created_by.id != parseInt($store.state.user.id)">
+          Vous n'avez pas créer encore d'équipe
+        </h1>
 
         <hr />
 
@@ -24,9 +17,17 @@
             >Ajouter un membre</router-link
           >
         </template>
+        <template v-if="team.created_by.id != parseInt($store.state.user.id)">
+          <router-link :to="{ name: 'AddTeam' }" class="button is-primary"
+            >Créer une équipe</router-link
+          >
+        </template>
       </div>
 
-      <div class="column is-12">
+      <div
+        class="column is-12"
+        v-if="team.created_by.id === parseInt($store.state.user.id)"
+      >
         <h2 class="subtitle">Membres</h2>
 
         <table class="table is-fullwidth">
@@ -75,7 +76,7 @@ export default {
         .get("/api/v1/teams/get_my_team/")
         .then((response) => {
           this.team = response.data;
-          console.log(this.team);
+          console.log("getTeam", response);
         })
         .catch((error) => {
           console.log(error);

@@ -61,7 +61,7 @@ export default {
       await axios
         .post("/api/v1/token/login/", formData)
         .then((response) => {
-          console.log(response)
+          console.log(response);
           const token = response.data.auth_token;
 
           this.$store.commit("setToken", token);
@@ -71,7 +71,7 @@ export default {
           localStorage.setItem("token", token);
         })
         .catch((error) => {
-          console.log(error)
+          console.log(error);
 
           if (error.response) {
             for (const property in error.response.data) {
@@ -91,7 +91,7 @@ export default {
           });
           localStorage.setItem("userid", response.data.id);
           localStorage.setItem("username", response.data.username);
-          this.$router.push("/dashboard/my-account");
+          this.$router.push("/dashboard/");
         })
         .catch((error) => {
           console.log(error);
@@ -105,7 +105,7 @@ export default {
             name: response.data.name,
           });
           // console.log(response);
-          this.$router.push("/dashboard/my-account");
+          this.$router.push("/dashboard/");
         })
         .catch((error) => {
           console.log(error);
