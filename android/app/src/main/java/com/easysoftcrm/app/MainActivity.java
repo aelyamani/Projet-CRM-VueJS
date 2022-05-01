@@ -1,4 +1,4 @@
-package com.easysoftcrm.app;
+package com.workyspacecrm.app;
 
 import com.getcapacitor.BridgeActivity;
 

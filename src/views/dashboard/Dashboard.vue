@@ -21,13 +21,15 @@
         <div class="box">
           <h2 class="subtitle">Mes leads</h2>
           <hr />
-          <ul>
+          <ul v-if="leads">
             <li v-for="lead in leads" v-bind:key="lead.id">
               <router-link :to="{ name: 'Lead', params: { id: lead.id } }">
                 - {{ lead.company }}</router-link
               >
             </li>
           </ul>
+          <p v-if="!leads"><strong>Vous n'avez pas de leads</strong></p>
+
           <hr />
           <router-link class="has-text-success" to="/dashboard/leads"
             >Voir plus...</router-link
@@ -38,13 +40,15 @@
         <div class="box">
           <h2 class="subtitle">Mes clients</h2>
           <hr />
-          <ul>
+          <ul v-if="clients">
             <li v-for="client in clients" v-bind:key="client.id">
               <router-link :to="{ name: 'Client', params: { id: client.id } }">
                 - {{ client.name }}</router-link
               >
             </li>
           </ul>
+          <p v-if="!clients"><strong>Vous n'avez pas de clients</strong></p>
+
           <hr />
           <router-link class="has-text-success" to="/dashboard/clients"
             >Voir plus...</router-link
@@ -55,11 +59,12 @@
         <div class="box">
           <h2 class="subtitle">Mon équipe</h2>
           <hr />
-          <ul>
+          <ul v-if="members">
             <li v-for="member in team.members" v-bind:key="member.id">
               - {{ member.username }}
             </li>
           </ul>
+          <p v-if="!members"><strong>Vous n'avez pas d'équipe</strong></p>
 
           <hr />
           <router-link class="has-text-success" to="/dashboard/team"

@@ -30,7 +30,6 @@ export default {
 
     if (this.$store.state.token) {
       axios.defaults.headers.common["Authorization"] = "Token " + this.$store.state.token;
-      axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'https://easysoftcrm.ppeaelya.xyz';
     } else {
       axios.defaults.headers.common["Authorization"] = "";
     }

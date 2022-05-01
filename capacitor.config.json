@@ -1,6 +1,6 @@
 {
-  "appId": "com.easysoftcrm.app",
-  "appName": "easysoftCRM",
-  "webDir": "easysoftcrm_vue",
+  "appId": "com.workyspacecrm.app",
+  "appName": "workyspacecrm",
+  "webDir": "prod",
   "bundledWebRuntime": false
 }
