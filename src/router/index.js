@@ -27,14 +27,9 @@ import EditNote from '../views/dashboard/EditNote.vue'
 const routes = [
   {
     path: '/',
-    name: 'LogIn',
+    name: 'Home',
     component: LogIn
   },
-  // {
-  //   path: '/sign-up',
-  //   name: 'SignUp',
-  //   component: SignUp
-  // },
   {
     path: '/dashboard',
     name: 'Dashboard',
@@ -174,7 +169,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
     next('/')
   } else {
-    next('/dashboard')
+    next()
   }
 })
 

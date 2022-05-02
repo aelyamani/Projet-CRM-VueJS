@@ -95,3 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
+<style lang="scss">
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+}
+</style>
