@@ -10,10 +10,12 @@
     "@capacitor/android": "^3.5.0",
     "@capacitor/cli": "^3.5.0",
     "@capacitor/core": "^3.5.0",
+    "@vue/cli": "^5.0.4",
     "axios": "^0.26.1",
     "bulma": "^0.9.3",
     "bulma-toast": "^2.4.1",
     "core-js": "^3.8.3",
+    "global": "^4.4.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"

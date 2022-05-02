@@ -3,7 +3,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     devtool: 'source-map'
-  }
+  },
+  // devServer: {
+  //   host: 'localhost'
+  // }
 })
 
 // Changement du nom du dossier de compilation

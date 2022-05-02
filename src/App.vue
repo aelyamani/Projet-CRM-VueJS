@@ -30,7 +30,8 @@ export default {
 
     if (this.$store.state.token) {
       axios.defaults.headers.common["Authorization"] = "Token " + this.$store.state.token;
-      // axios.defaults.headers.common["Access-Control-Allow-Origin"] = "https:/";
+      axios.defaults.headers.common["Access-Control-Allow-Origin"] =
+        "https://workyspacecrm.ppeaelya.xyz";
     } else {
       axios.defaults.headers.common["Authorization"] = "";
     }

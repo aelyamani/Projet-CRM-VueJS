@@ -20,6 +20,7 @@ import AddClient from '../views/dashboard/AddClient.vue'
 import EditClient from '../views/dashboard/EditClient.vue'
 import Client from '../views/dashboard/Client.vue'
 import AddNote from '../views/dashboard/AddNote.vue'
+import AddDocument from '../views/dashboard/AddDocument.vue'
 import EditNote from '../views/dashboard/EditNote.vue'
 
 
@@ -148,6 +149,14 @@ const routes = [
     }
   },
   {
+    path: '/dashboard/clients/:id/add-document',
+    name: 'AddDocument',
+    component: AddDocument,
+    meta: {
+      requireLogin: true
+    }
+  },
+  {
     path: '/dashboard/clients/:id/edit-note',
     name: 'EditNote',
     component: EditNote,
@@ -174,7 +183,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
     next('/')
   } else {
-    next('/dashboard')
+    next()
   }
 })
 

@@ -37,7 +37,7 @@
 
       <hr />
 
-      <div class="column is-12">
+      <div class="column is-12 box">
         <h2 class="subtitle">Notes</h2>
 
         <router-link
@@ -65,6 +65,34 @@
           </div>
         </div>
       </div>
+
+      <div class="column is-12 box">
+        <h2 class="subtitle">Documents</h2>
+        <router-link
+          :to="{ name: 'AddDocument', params: { id: `${client.id}` } }"
+          class="button is-success mb-6"
+          >Ajouter un document</router-link
+        >
+        <template v-if="documents.length">
+          <table class="table is-fullwidth">
+            <thead>
+              <tr>
+                <th>Nom du document</th>
+                <th>Type du fichier</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr v-for="document in documents" v-bind:key="document.id">
+                <td>{{ document.name }}</td>
+                <td>{{ document.type }}</td>
+                <td><a :href="`${document.file}`">Voir</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </template>
+      </div>
     </div>
   </div>
 </template>
@@ -78,6 +106,7 @@ export default {
     return {
       client: {},
       notes: [],
+      documents: [],
     };
   },
   mounted() {
@@ -141,6 +170,17 @@ export default {
         .then((response) => {
           this.notes = response.data;
           console.log("note", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      this.$store.commit("setIsLoading", false);
+      await axios
+        .get(`/api/v1/documents/?client_id=${clientID}`)
+        .then((response) => {
+          this.documents = response.data;
+          console.log("document", response);
         })
         .catch((error) => {
           console.log(error);
