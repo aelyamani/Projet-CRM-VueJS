@@ -1,4 +1,4 @@
-# workyspacecrm_vue
+# Projet CRM Django-VueJS 
 
 ## Project setup
 
