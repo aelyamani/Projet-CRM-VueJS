@@ -1,6 +1,6 @@
 # Projet CRM Django-VueJS 
 
-Projet de validation diplôme PROMEO 2022
+Projet épreuve E5 BTS SIO PROMEO 2022
 
 ## Project setup
 
